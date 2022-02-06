@@ -17,6 +17,10 @@
   "require-dev": {
     "psalm/phar": "^4.20"
   },
+  "replace": {
+    "symfony/polyfill-php73": "*",
+    "symfony/polyfill-php74": "*"
+  },
   "config": {
     "allow-plugins": {
       "ocramius/package-versions": true
