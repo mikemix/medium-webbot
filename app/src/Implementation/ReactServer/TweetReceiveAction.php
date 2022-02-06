@@ -19,10 +19,24 @@ class TweetReceiveAction
     private const STREAM_URI = 'tweets/search/stream';
 
     private Browser $browser;
+    private ?ReadableStreamInterface $stream = null;
 
     public function __construct(Browser $browser)
     {
         $this->browser = $browser;
+    }
+
+    public function __destruct()
+    {
+        if ($this->stream) {
+            echo 'Closing';
+
+            try {
+                $this->stream->close();
+            } catch (\Exception $exception) {
+                // ignore errors
+            }
+        }
     }
 
     public function __invoke(ServerContext $context, \Closure $onTweet): void
@@ -74,6 +88,8 @@ class TweetReceiveAction
                         return;
                     }
                 });
+
+                $this->stream = $body;
             },
             function (\Exception $exception) use ($output): void {
                 $output->writeln(\sprintf('<error>Not listening to the stream: %s</error>', $exception->getMessage()));
