@@ -75,8 +75,8 @@ class TweetReceiveAction
                     }
                 });
             },
-            function (\Exception $throwable): void {
-                throw $throwable;
+            function (\Exception $exception) use ($output): void {
+                $output->writeln(\sprintf('<error>Not listening to the stream: %s</error>', $exception->getMessage()));
             }
         );
     }

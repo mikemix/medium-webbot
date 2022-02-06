@@ -53,8 +53,8 @@ class TweetRespondAction
             static function () use ($output, $response): void {
                 $output->writeln(sprintf('[%s] responded: %s', \date('Y-m-d H:i:s'), $response->text()));
             },
-            static function (\Throwable $exception): void {
-                throw $exception;
+            static function (\Exception $exception) use ($output): void {
+                $output->writeln(sprintf('[%s] response error: %s', \date('Y-m-d H:i:s'), $exception->getMessage()));
             }
         );
     }
