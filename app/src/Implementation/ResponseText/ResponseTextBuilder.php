@@ -89,7 +89,7 @@ final class ResponseTextBuilder implements ResponseTextBuilderInterface
 
     public function getMissionUpdateTime(JwstTelemetry $telemetry): string
     {
-        return \sprintf('Last update was on %s', $telemetry->lastUpdate()->format('Y-m-d H:i:s UTC'));
+        return \sprintf('Last update was on %s', $telemetry->lastUpdate()->format('Y-m-d H:i:s \U\T\C'));
     }
 
     private function tweetDoesNotStartWithBotName(TweetInterface $tweet): bool
