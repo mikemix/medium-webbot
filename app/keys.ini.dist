@@ -1,0 +1,19 @@
+# Handle of the bot, without the @ prefix
+BOT_HANDLE=
+
+# Values below are available under the "keys and tokens" of the app
+# https://developer.twitter.com/en/portal/dashboard
+
+# API key
+TWITTER_API_KEY=
+
+# API secret
+TWITTER_API_SECRET=
+
+# Authentication Tokens > Bearer Token
+TWITTER_BEARER=
+
+# Authentication Tokens > Access token & secret
+# (with Read and Write permissions)
+TWITTER_OAUTH_TOKEN=
+TWITTER_OAUTH_SECRET=

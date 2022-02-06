@@ -1,0 +1,25 @@
+{
+  "name": "mikemix/twitter-webbot",
+  "require": {
+    "php": ">=7.4",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "react/react": "v1.2.*",
+    "react/http": "^1.6",
+    "pimple/pimple": "^3.5",
+    "symfony/console": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "TwitterWebbot\\": "src"
+    }
+  },
+  "require-dev": {
+    "psalm/phar": "^4.20"
+  },
+  "config": {
+    "allow-plugins": {
+      "ocramius/package-versions": true
+    }
+  }
+}
