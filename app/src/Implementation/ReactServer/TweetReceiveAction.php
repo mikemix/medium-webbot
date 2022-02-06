@@ -65,7 +65,7 @@ class TweetReceiveAction
                 assert($body instanceof StreamInterface);
                 assert($body instanceof ReadableStreamInterface);
 
-                $output->writeln(\sprintf('Listening to the stream of @%s…', $configuration->botHandle()));
+                $output->writeln(\sprintf('Listening to the stream of <comment>@%s</comment>…', $configuration->botHandle()));
 
                 $body->on('data', function (string $chunk) use ($onTweet): void {
                     try {
